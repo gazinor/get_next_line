@@ -6,11 +6,11 @@
 /*   By: glaurent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 18:21:33 by glaurent          #+#    #+#             */
-/*   Updated: 2019/10/23 18:21:43 by glaurent         ###   ########.fr       */
+/*   Updated: 2019/10/23 21:06:02 by glaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -20,13 +20,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	if (!len || start > ft_strlen(s))
-	{
-		if (!(str = malloc(sizeof(char))))
-			return (NULL);
-		str[0] = '\0';
-		return (str);
-	}
 	if (!s[start] || !(str = malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	while (s[start] && len--)
@@ -51,8 +44,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return ((char *)s2);
 	if (!s2)
 		return ((char *)s1);
-	s1_size = ft_strlen(s1);
-	s2_size = ft_strlen(s2);
+	s1_size = 0;
+	while (s1[s1_size])
+		++s1_size;
+	s2_size = 0;
+	while (s2[s2_size])
+		++s2_size;
 	if (!(str = malloc(sizeof(char) * (s1_size + s2_size + 1))))
 		return (NULL);
 	ft_memcpy(str, s1, s1_size);
@@ -67,5 +64,22 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		return (NULL);
 	while (n--)
 		*((char*)dest + n) = *((char*)src + n);
+	return (dest);
+}
+
+char	*ft_strdup(const char *str)
+{
+	char	*dest;
+	int		i;
+
+	i = 0;
+	while (str[i])
+		++i;
+	if (!(dest = malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	i = -1;
+	while (str[++i])
+		dest[i] = str[i];
+	dest[i] = '\0';
 	return (dest);
 }
