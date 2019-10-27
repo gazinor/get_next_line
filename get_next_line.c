@@ -6,12 +6,12 @@
 /*   By: glaurent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 18:26:19 by glaurent          #+#    #+#             */
-/*   Updated: 2019/10/27 18:13:45 by glaurent         ###   ########.fr       */
+/*   Updated: 2019/10/27 19:23:45 by glaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
+
 t_list		*ft_create_fd(int fd, t_list **list)
 {
 	while (*list)
@@ -34,7 +34,7 @@ t_list		*ft_find_fd(int fd, t_list **list)
 		}
 		list = &(*list)->next;
 	}
-	return(ft_create_fd(fd, list));
+	return (ft_create_fd(fd, list));
 }
 
 int			ft_check(int fd, char **buffer, char **line)

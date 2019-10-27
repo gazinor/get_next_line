@@ -6,7 +6,7 @@
 /*   By: glaurent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 18:09:09 by glaurent          #+#    #+#             */
-/*   Updated: 2019/10/27 16:33:46 by glaurent         ###   ########.fr       */
+/*   Updated: 2019/10/27 19:24:38 by glaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #  define BUFFER_SIZE 32
 # endif
 
-#include <stdlib.h>
-#include <unistd.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct		s_list
 {
@@ -27,14 +27,14 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-char		*ft_substr(const char *s, unsigned int start, size_t len);
-char		*ft_strjoin(char *s1, char const *s2);
-void		*ft_memcpy(void *dest, const void *src, size_t n);
-char		*ft_strdup(char *str);
-t_list		*ft_create_fd(int fd, t_list **list);
-t_list		*ft_find_fd(int fd, t_list **list);
-int			ft_check(int fd, char **buffer, char **line);
-char		*ft_read_n_check(int fd, char *buffer);
-int			get_next_line(int fd, char **line);
+char				*ft_substr(const char *s, unsigned int start, size_t len);
+char				*ft_strjoin(char *s1, char const *s2);
+void				*ft_memcpy(void *dest, const void *src, size_t n);
+char				*ft_strdup(char *str);
+t_list				*ft_create_fd(int fd, t_list **list);
+t_list				*ft_find_fd(int fd, t_list **list);
+int					ft_check(int fd, char **buffer, char **line);
+char				*ft_read_n_check(int fd, char *buffer);
+int					get_next_line(int fd, char **line);
 
 #endif
