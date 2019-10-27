@@ -6,7 +6,7 @@
 /*   By: glaurent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 20:52:47 by glaurent          #+#    #+#             */
-/*   Updated: 2019/10/27 16:52:12 by glaurent         ###   ########.fr       */
+/*   Updated: 2019/10/27 18:21:22 by glaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,24 @@ int		main(int ac, char **av)
 	fd3 = open(av[3], O_RDONLY);
 	(void)ac;
 	ret = get_next_line(fd, &line);
-	printf("fd  : %s\n", line);
+	printf("ret : %d | fd  : %s\n", ret, line);
 	free(line);
 	ret2 = get_next_line(fd2, &line);
-	printf("fd2 : %s\n", line);
+	printf("ret : %d | fd2 : %s\n", ret2, line);
 	free(line);
 	ret3 = get_next_line(fd3, &line);
-	printf("fd3 : %s\n", line);
+	printf("ret : %d | fd3 : %s\n", ret3, line);
 	free(line);
 	while (ret > 0 || ret2 > 0 || ret3 > 0)
 	{
 		ret = get_next_line(fd, &line);
-		printf("fd  : %s\n", line);
+	printf("ret : %d | fd  : %s\n", ret, line);
 		free(line);
 		ret2 = get_next_line(fd2, &line);
-		printf("fd2 : %s\n", line);
+	printf("ret : %d | fd2 : %s\n", ret2, line);
 		free(line);
 		ret3 = get_next_line(fd3, &line);
-		printf("fd3 : %s\n", line);
+	printf("ret : %d | fd3 : %s\n", ret3, line);
 		free(line);
 	}
 	close(fd);
