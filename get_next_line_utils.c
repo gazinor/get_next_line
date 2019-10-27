@@ -6,7 +6,7 @@
 /*   By: glaurent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 18:21:33 by glaurent          #+#    #+#             */
-/*   Updated: 2019/10/24 15:51:29 by glaurent         ###   ########.fr       */
+/*   Updated: 2019/10/27 15:57:21 by glaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ char	*ft_strjoin(char *s1, char const *s2)
 	int		s1_size;
 	int		s2_size;
 
-	if (!s1 && !s2)
+	if (!(s1) && !s2)
 		return (NULL);
-	if (!s1)
+	if (!(s1))
 		return ((char *)s2);
 	if (!s2)
 		return ((char *)s1);
@@ -67,7 +67,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-char	*ft_strdup(const char *str)
+char	*ft_strdup(char *str)
 {
 	char	*dest;
 	int		i;
