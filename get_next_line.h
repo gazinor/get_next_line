@@ -6,7 +6,7 @@
 /*   By: glaurent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 18:09:09 by glaurent          #+#    #+#             */
-/*   Updated: 2019/10/27 19:24:38 by glaurent         ###   ########.fr       */
+/*   Updated: 2019/10/28 17:11:15 by glaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 typedef struct		s_list
 {
 	int				fd;
+	int				ret;
 	char			*buffer;
 	struct s_list	*next;
 }					t_list;
@@ -34,7 +35,7 @@ char				*ft_strdup(char *str);
 t_list				*ft_create_fd(int fd, t_list **list);
 t_list				*ft_find_fd(int fd, t_list **list);
 int					ft_check(int fd, char **buffer, char **line);
-char				*ft_read_n_check(int fd, char *buffer);
+char				*ft_read_n_check(int fd, char *buffer, int *ret);
 int					get_next_line(int fd, char **line);
 
 #endif
