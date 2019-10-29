@@ -6,11 +6,11 @@
 /*   By: glaurent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 18:26:19 by glaurent          #+#    #+#             */
-/*   Updated: 2019/10/28 19:45:47 by glaurent         ###   ########.fr       */
+/*   Updated: 2019/10/28 19:55:06 by glaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 t_list		*ft_create_fd(int fd, t_list **list)
 {
