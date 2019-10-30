@@ -6,7 +6,7 @@
 /*   By: glaurent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 18:26:19 by glaurent          #+#    #+#             */
-/*   Updated: 2019/10/28 19:45:47 by glaurent         ###   ########.fr       */
+/*   Updated: 2019/10/30 14:03:02 by glaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int			ft_check(int fd, char **buffer, char **line)
 char		*ft_read_n_check(int fd, char *buffer, int *ret)
 {
 	char	tmp[BUFFER_SIZE + 1];
-	char	*tarace;
+	char	*clone;
 	int		i;
 
 	while ((*ret = read(fd, tmp, BUFFER_SIZE)) > 0)
@@ -65,14 +65,14 @@ char		*ft_read_n_check(int fd, char *buffer, int *ret)
 			++i;
 		if (tmp[i] == '\n')
 		{
-			tarace = ft_strjoin(buffer, tmp);
+			clone = ft_strjoin(buffer, tmp);
 			free(buffer);
-			buffer = tarace;
+			buffer = clone;
 			return (buffer);
 		}
-		tarace = ft_strjoin(buffer, tmp);
+		clone = ft_strjoin(buffer, tmp);
 		free(buffer);
-		buffer = tarace;
+		buffer = clone;
 	}
 	return (buffer);
 }
